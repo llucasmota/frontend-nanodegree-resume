@@ -6,7 +6,7 @@ var bio = {
     "name": "Lucas Mota",
     "role": "Front End Developer",
     "contact": {
-        "mobile": "61982561940",
+        "mobile": "61999999999",
         "email": "lucas.o.mota@gmail.com",
         "github": "https://github.com/llucasmota/Portifolio-Project",
         "twitter": "twitter.com/llucasmota",

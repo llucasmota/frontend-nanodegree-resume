@@ -22,19 +22,10 @@ $("#header").prepend(formatteName);
 var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formatteRole);
 
-/*
-jobs: array of objects with
-         employer: string 
-         title: string 
-         location: string 
-         dates: string (Can be 'in progress')
-         description: string 
-
-*/
 var work = [
   {
     "job": {
-      "employer": "Mirante Tecnologia",
+      "employer": "Mirante  Tecnologia",
       "title": "Analista de Teste",
       "location": "Brasília",
       "dates": "Junho de 2017 até o momento.",
@@ -62,20 +53,6 @@ var work = [
 
 $("#main").append(work[0].job.title);
 
-//   education contains:
-
-//   schools: array of objects with
-//        name: string
-//        location: string
-//        degree: string
-//        majors: array of strings
-//        dates: string (works with a hyphen between them)
-//        url: string (optional)
-//   onlineCourses: array of objects with
-//        title: string
-//        school: string
-//        dates: string (works with a hyphen between them)
-//        url: string
 
 var education = [
   {
@@ -85,7 +62,7 @@ var education = [
       "degree": "Superior",
       "majors": ["alguma coisa", "duas coisas"],
       "dates": "2014 - 2017",
-      "url":  "github.com/llucasmota" 
+      "url": "github.com/llucasmota"
     }
   }
 ]

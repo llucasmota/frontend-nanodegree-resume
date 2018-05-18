@@ -46,7 +46,7 @@ var work = {
       "title": "Técnico de Suporte",
       "location": "Brasília",
       "dates": "Fevereiro de 2014 até julho de 2015",
-      "description": "TerereuTerereu"
+      "description": "TerereuTe"
     }
 
 

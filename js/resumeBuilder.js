@@ -22,9 +22,10 @@ $("#header").prepend(formatteName);
 var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formatteRole);
 
-var work = [
-  {
-    "job": {
+
+var work = {
+  "job": [
+    {
       "employer": "Mirante  Tecnologia",
       "title": "Analista de Teste",
       "location": "Brasília",
@@ -32,7 +33,7 @@ var work = [
       "description": "Testes Funcionais, Automatizados e etc."
 
     },
-    "job": {
+    {
       "employer": "CTIS",
       "title": "Testador de Software",
       "location": "Brasília",
@@ -40,31 +41,34 @@ var work = [
       "description": "Testes Funcionais, Automatizados e etc."
 
     },
-    "job": {
+    {
       "employer": "Tecnisys",
       "title": "Técnico de Suporte",
       "location": "Brasília",
       "dates": "Fevereiro de 2014 até julho de 2015",
       "description": "TerereuTerereu"
-
     }
-  }
-]
-
-$("#main").append(work[0].job.title);
 
 
-var education = [
-  {
-    "schools": {
+  ]
+}
+
+$("#main").append(work.job[1].title);
+
+
+
+var education = {
+  "schools": [
+    {
       "name": "Análise e Desenvolvimento de Sistemas",
       "location": "Brasília",
       "degree": "Superior",
       "majors": ["alguma coisa", "duas coisas"],
       "dates": "2014 - 2017",
       "url": "github.com/llucasmota"
-    }
-  }
-]
+    },
 
-$('#main').append(education[0].schools.name)
+  ]
+}
+
+$('#main').append(education.schools[0].name);

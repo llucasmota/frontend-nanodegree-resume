@@ -75,3 +75,20 @@ var education = {
 }
 
 $('#main').append(education.schools[0].name);
+
+/** 
+ * projects
+projects contém uma matriz de projects. Cada objeto project em projects deve conter um title, 
+dates trabalhadas, description e uma matriz images com strings de URL para imagens do projeto. 
+*/
+
+var projects = {
+  "projects" :  [
+    {
+      "title" : "Projeto - Currículo Online",
+      "dates" : "june -  2018",
+      "description" : "",
+      "images" :  [],
+    }
+  ]
+}

@@ -48,14 +48,10 @@ var work = {
       "dates": "Fevereiro de 2014 até julho de 2015",
       "description": "TerereuTe"
     }
-
-
   ]
 }
 
 $("#main").append(work.job[1].title);
-
-
 
 var education = {
   "schools": [
@@ -67,7 +63,14 @@ var education = {
       "dates": "2014 - 2017",
       "url": "github.com/llucasmota"
     },
-
+  ],
+  "onlineCourses": [
+    {
+      "title": "Frot-End Developer",
+      "school": "Udacity",
+      "dates": "2017 - 2018",
+      "url": "br.udacity.com"
+    }
   ]
 }
 

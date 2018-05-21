@@ -1,6 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 
 var bio = {
   "name": "Lucas Mota",
@@ -15,6 +12,14 @@ var bio = {
   "welcomeMessage": "Seja bem-vindo ao meu portifólio",
   "skills": ["Html5", "Jquery", "Javascript", "End-To-End Test"],
   "biopic": "images/fry.jpg"
+}
+
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  bio.skills.forEach(function (skill) {
+    var formatteSkills = HTMLskills.replace("%data%", skill);
+    $("#skills").append(formatteSkills);
+  });
 }
 
 var formatteName = HTMLheaderName.replace("%data%", bio.name);
@@ -51,7 +56,19 @@ var work = {
   ]
 }
 
-$("#main").append(work.job[1].title);
+$("#workExperience").append(HTMLworkStart);
+for (jobs in work.job) {
+  var formatteEmployer = HTMLworkEmployer.replace("%data%", work.job[jobs].employer);
+  var formatteWorkTitle = HTMLworkTitle.replace("%data%", work.job[jobs].title);
+  $(".work-entry:last").append(formatteEmployer + formatteWorkTitle);
+  var formatteWorkLocation = HTMLworkLocation.replace("%data%", work.job[jobs].location);
+  $(".work-entry").append(formatteWorkLocation);
+  var formatteWorkDates = HTMLworkDates.replace("%data%", work.job[jobs].dates);
+  $(".work-entry").append(formatteWorkDates);
+  var formatteWorkDescription = HTMLworkDescription.replace("%data%", work.job[jobs].description);
+  $(".work-entry").append(formatteWorkDescription);
+
+}
 
 var education = {
   "schools": [
@@ -76,19 +93,13 @@ var education = {
 
 $('#main').append(education.schools[0].name);
 
-/** 
- * projects
-projects contém uma matriz de projects. Cada objeto project em projects deve conter um title, 
-dates trabalhadas, description e uma matriz images com strings de URL para imagens do projeto. 
-*/
-
 var projects = {
-  "projects" :  [
+  "projects": [
     {
-      "title" : "Projeto - Currículo Online",
-      "dates" : "june -  2018",
-      "description" : "",
-      "images" :  [],
+      "title": "Projeto - Currículo Online",
+      "dates": "june -  2018",
+      "description": "",
+      "images": [],
     }
   ]
 }

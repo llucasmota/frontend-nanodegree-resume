@@ -26,7 +26,22 @@ var formatteName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formatteName);
 var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formatteRole);
+var formattePicture = HTMLbioPic.replace("%data%", bio.biopic);
+$("#header").append(formattePicture);
 
+
+//adicionado botão de internacionalização
+
+$("#main").append(internationalizeButton);
+
+function inName(name) {
+  var internacionalName = [];
+  var newNAme = name.split(" ");
+  InternacionalName = newName.reverse();
+  return InternacionalName;
+}
+
+console.log(inName(bio.name));
 
 var work = {
   "job": [
@@ -56,19 +71,23 @@ var work = {
   ]
 }
 
-$("#workExperience").append(HTMLworkStart);
-for (jobs in work.job) {
-  var formatteEmployer = HTMLworkEmployer.replace("%data%", work.job[jobs].employer);
-  var formatteWorkTitle = HTMLworkTitle.replace("%data%", work.job[jobs].title);
-  $(".work-entry:last").append(formatteEmployer + formatteWorkTitle);
-  var formatteWorkLocation = HTMLworkLocation.replace("%data%", work.job[jobs].location);
-  $(".work-entry").append(formatteWorkLocation);
-  var formatteWorkDates = HTMLworkDates.replace("%data%", work.job[jobs].dates);
-  $(".work-entry").append(formatteWorkDates);
-  var formatteWorkDescription = HTMLworkDescription.replace("%data%", work.job[jobs].description);
-  $(".work-entry").append(formatteWorkDescription);
-
+displayWork();
+function displayWork() {
+  $("#workExperience").append(HTMLworkStart);
+  for (jobs in work.job) {
+    var formatteEmployer = HTMLworkEmployer.replace("%data%", work.job[jobs].employer);
+    var formatteWorkTitle = HTMLworkTitle.replace("%data%", work.job[jobs].title);
+    $(".work-entry:last").append(formatteEmployer + formatteWorkTitle);
+    var formatteWorkLocation = HTMLworkLocation.replace("%data%", work.job[jobs].location);
+    $(".work-entry").append(formatteWorkLocation);
+    var formatteWorkDates = HTMLworkDates.replace("%data%", work.job[jobs].dates);
+    $(".work-entry").append(formatteWorkDates);
+    var formatteWorkDescription = HTMLworkDescription.replace("%data%", work.job[jobs].description);
+    $(".work-entry").append(formatteWorkDescription);
+  }
 }
+
+
 
 var education = {
   "schools": [
@@ -91,7 +110,6 @@ var education = {
   ]
 }
 
-$('#main').append(education.schools[0].name);
 
 var projects = {
   "projects": [

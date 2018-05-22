@@ -37,9 +37,11 @@ $("#main").append(internationalizeButton);
 function inName(name) {
   var internacionalName = [];
   var newNAme = name.split(" ");
-  InternacionalName = newName.reverse();
-  return InternacionalName;
+  internacionalName = newName.reverse();
+  return internacionalName; 
 }
+
+//teste
 
 console.log(inName(bio.name));
 

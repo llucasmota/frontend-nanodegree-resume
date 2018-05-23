@@ -30,15 +30,20 @@ var formattePicture = HTMLbioPic.replace("%data%", bio.biopic);
 $("#header").append(formattePicture);
 
 
-//adicionado botão de internacionalização
 
 $("#main").append(internationalizeButton);
 
+// Function que internacionaliza o nome
 function inName(name) {
   var internacionalName = [];
-  var newNAme = name.split(" ");
-  internacionalName = newName.reverse();
-  return internacionalName; 
+  var contrario = [];
+  var newName = name.split(" ");
+  contrario = newName.reverse();
+  var one = contrario[0].toUpperCase();
+  var two = contrario[1].toLowerCase();
+  internacionalName = one + " " + two;
+  
+  return internacionalName;
 }
 
 //teste

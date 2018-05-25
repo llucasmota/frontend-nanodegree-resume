@@ -7,12 +7,35 @@ var bio = {
     "email": "lucas.o.mota@gmail.com",
     "github": "https://github.com/llucasmota/Portifolio-Project",
     "twitter": "twitter.com/llucasmota",
-    "location": "Brasília - Brazil"
+    "location": "Brazil"
   },
   "welcomeMessage": "Seja bem-vindo ao meu portifólio",
   "skills": ["Html5", "Jquery", "Javascript", "End-To-End Test"],
   "biopic": "images/fry.jpg"
 }
+
+
+var formatteName = HTMLheaderName.replace("%data%", bio.name);
+var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formatteName + formatteRole);
+var formatteContact = HTMLmobile.replace("%data%", bio.contact.mobile);
+var formatteMail = HTMLemail.replace("%data%", bio.contact.email);
+var formatteTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+var formatteGithub = HTMLgithub.replace("%data%", bio.contact.twitter);
+var formatteBioLocation = HTMLlocation.replace("%data%", bio.contact.location)
+
+$("#header").append(formatteContact);
+$("#header").append(formatteMail);
+$("#header").append(formatteTwitter);
+$("#header").append(formatteGithub);
+$("#header").append(formatteBioLocation);
+
+
+
+var formattePicture = HTMLbioPic.replace("%data%", bio.biopic);
+$("#header").append(formattePicture);
+
+
 
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -21,13 +44,6 @@ if (bio.skills.length > 0) {
     $("#skills").append(formatteSkills);
   });
 }
-
-var formatteName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formatteName);
-var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formatteRole);
-var formattePicture = HTMLbioPic.replace("%data%", bio.biopic);
-$("#header").append(formattePicture);
 
 
 
@@ -42,7 +58,7 @@ function inName(name) {
   var one = contrario[0].toUpperCase();
   var two = contrario[1].toLowerCase();
   internacionalName = one + " " + two;
-  
+
   return internacionalName;
 }
 
@@ -55,7 +71,7 @@ var work = {
     {
       "employer": "Mirante  Tecnologia",
       "title": "Analista de Teste",
-      "location": "Brasília",
+      "location": "Egito",
       "dates": "Junho de 2017 até o momento.",
       "description": "Testes Funcionais, Automatizados e etc."
 
@@ -128,3 +144,5 @@ var projects = {
     }
   ]
 }
+
+$("#mapDiv").append(googleMap);

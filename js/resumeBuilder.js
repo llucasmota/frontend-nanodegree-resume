@@ -1,74 +1,94 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
+
+//funcao que prepara variavem para ser inserido na página
+function preparacao(variavel, formatador, atributo) {
+  formatador = variavel.replace("%data%", atributo);
+}
 
 var bio = {
   "name": "Lucas Mota",
   "role": "Front End Developer",
-  "contact": {
-    "mobile": "61982561940",
-    "email": "lucas.o.mota@gmail.com",
-    "github": "https://github.com/llucasmota/Portifolio-Project",
-    "twitter": "twitter.com/llucasmota",
-    "location": "Brasília - Brazil"
+  "contacts": {
+      "mobile": "+55 (61) 98256-1940",
+      "email": "lucas.o.mota@gmail.com",
+      "github": "github.com/llucasmota/",
+      "twitter": "twitter.com/llucasmota",
+      "location": "Brasília - Brasil"
   },
-  "welcomeMessage": "Seja bem-vindo ao meu portifólio",
-  "skills": ["Html5", "Jquery", "Javascript", "End-To-End Test"],
-  "biopic": "images/fry.jpg"
+  "welcomeMessage": "Hi, there! Welcome to my space",
+  "skills": [
+      "Javascript",
+      "jQuery",
+      "HTML",
+      "CSS",
+      "Protractor",
+      "Jasmine",
+      "Cucumber",
+      "Test End-to-End"
+  ],
+  "biopic": "images/fry.jpg",
+  "display": function () {
+      var formatte = {
+          formatteName: HTMLheaderName.replace("%data%", bio.name),
+          formatteRole: HTMLheaderRole.replace("%data%", bio.role),
+          formattePhone: HTMLmobile.replace("%data%", bio.contacts.mobile),
+          formatteMail: HTMLemail.replace("%data%", bio.contacts.email),
+          formatteTwitter: HTMLtwitter.replace("%data%", bio.contacts.twitter),
+          formatteGithub: HTMLgithub.replace("%data%", bio.contacts.twitter),
+          formatteBioLocation: HTMLlocation.replace("%data%", bio.contacts.location),
+          formattePicture: HTMLbioPic.replace("%data%", bio.biopic),
+          formatteWelcome: HTMLwelcomeMsg.replace(`%data%`, bio.welcomeMessage),
+          formatteSkills : ""
+      }
+      
+
+      $("#header").append(formatte.formattePicture);
+      $("#header").prepend(formatte.formatteName + formatte.formatteRole);
+      $("#topContacts").append(formatte.formattePhone);
+      $("#topContacts").append(formatte.formatteMail);
+      $("#topContacts").append(formatte.formatteTwitter);
+      $("#topContacts").append(formatte.formatteGithub);
+      $("#topContacts").append(formatte.formatteBioLocation);
+      $(`#header`).append(formatte.formatteWelcome);
+      if (bio.skills.length > 0) {
+          $("#header").append(HTMLskillsStart);
+          bio.skills.forEach(function (indexSkill) {
+              formatte.formatteSkills = HTMLskills.replace(`%data%`, indexSkill);
+              $(`#skills`).append(formatte.formatteSkills);
+          })
+      }
+
+  }
 }
 
-var formatteName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formatteName);
-var formatteRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formatteRole);
-
-
-var work = {
-  "job": [
-    {
-      "employer": "Mirante  Tecnologia",
-      "title": "Analista de Teste",
-      "location": "Brasília",
-      "dates": "Junho de 2017 até o momento.",
-      "description": "Testes Funcionais, Automatizados e etc."
-
-    },
-    {
-      "employer": "CTIS",
-      "title": "Testador de Software",
-      "location": "Brasília",
-      "dates": "Agosto de 2015 até junho de 2017.",
-      "description": "Testes Funcionais, Automatizados e etc."
-
-    },
-    {
-      "employer": "Tecnisys",
-      "title": "Técnico de Suporte",
-      "location": "Brasília",
-      "dates": "Fevereiro de 2014 até julho de 2015",
-      "description": "TerereuTerereu"
-    }
-
-
-  ]
-}
-
-$("#main").append(work.job[1].title);
-
-
+bio.display();
 
 var education = {
   "schools": [
-    {
-      "name": "Análise e Desenvolvimento de Sistemas",
-      "location": "Brasília",
-      "degree": "Superior",
-      "majors": ["alguma coisa", "duas coisas"],
-      "dates": "2014 - 2017",
-      "url": "github.com/llucasmota"
-    },
+      {
+          "name": "System Developer",
+          "location": "Brasília",
+          "degree": "Graduação",
+          "majors": ["Desenvolvimento de sistemas", "Adm de dados"],
+          "dates": "2014 - 2017",
+          "url": "https://uniceub.br"
 
-  ]
+      },
+  ],
+  "onlineCourses": [
+      {
+          "title": "Front End Developer",
+          "school": "Udacity",
+          "dates": "2017 - 2018",
+          "url": "https://br.udacity.com"
+      },
+      {
+          "title": "Testes Automatizados com Jasmine",
+          "school": "Alura",
+          "dates": "2018 - 2018",
+          "url": "https://alura.com.br"
+      }
+  ],
+  "display": function () {
+
+  }
 }
-
-$('#main').append(education.schools[0].name);

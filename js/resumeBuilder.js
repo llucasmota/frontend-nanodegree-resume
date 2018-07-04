@@ -139,3 +139,67 @@ var education = {
 
 education.display();
 
+var work = {
+    "jobs" : [
+        {
+            "employer": "CTIS",
+            "title": "Software Tester",
+            "location": "Brasília",
+            "dates": "2015 - 2017",
+            "description": "Codificação de testes automatizados utilizando javascript como linguagem, Protractor Framework como implementação das tecnologias jasmine, webdriver, além de todo escopo próprio do Protractor. Utilização da linguagem SQL para criação de massa de dados, consultas e demais operações necessárias. Criação de roteiros de teste, documentos de evidência, plano de teste e demais documentos necessários para a disciplina." 
+ 
+        },
+        {
+            "employer": "Mirante Tecnologia",
+            "title": "Analista de Teste",
+            "location": "Brasília",
+            "dates": "2017 - 2018",
+            "description": "Realização de testes funcionais baseados nas aplicações financeiras do sicoob" 
+ 
+        },
+        {
+            "employer": "Sicoob",
+            "title": "Técnico de TI",
+            "location": "Brasília",
+            "dates": "2018",
+            "description": "Realização de testes funcionais, testes REST baseados no apimanager e testes automatizados baseados nas aplicações financeiras do sicoob" 
+ 
+        },
+    ],
+    "display" : function()  {
+       // $(`#workExperience`).append(HTMLworkStart);
+        var formatteWork = {
+            formatteEmployer : "",
+            formatteTitle : "",
+            formatteLocation : "",
+            formatteDates : "",
+            formatteDescription : ""
+        }
+    
+        work.jobs.forEach(function(works){
+        formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
+        formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
+        formatteWork.HTMLworkLocation = HTMLworkEmployer.replace(`%data%`, works.location);
+        formatteWork.formatteDates = HTMLworkEmployer.replace(`%data%`, works.dates);
+        formatteWork.formatteDescription = HTMLworkEmployer.replace(`%data%`, works.description);
+        if(work.length > 0)   {
+            // $(`#workExperience`).append(formatteWork.formatteEmployer);
+            // $(`#workExperience`).append(formatteWork.formatteTitle);
+            // $(`.work-entry`).append(formatteWork.HTMLworkLocation);
+            // $(`.work-entry`).append(formatteWork.formatteDates);
+            // $(`.work-entry`).append(formatteWork.formatteDescription);
+        }
+
+       });
+    }
+}
+
+
+// var HTMLworkStart = '<div class="work-entry"></div>';
+// var HTMLworkEmployer = '<a href="#">%data%';
+// var HTMLworkTitle = ' - %data%</a>';
+// var HTMLworkDates = '<div class="date-text">%data%</div>';
+// var HTMLworkLocation = '<div class="location-text">%data%</div>';
+// var HTMLworkDescription = '<p><br>%data%</p>';
+
+

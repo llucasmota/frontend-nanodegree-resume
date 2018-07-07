@@ -167,7 +167,7 @@ var work = {
         },
     ],
     "display" : function()  {
-       // $(`#workExperience`).append(HTMLworkStart);
+       $(`#workExperience`).append(HTMLworkStart);
         var formatteWork = {
             formatteEmployer : "",
             formatteTitle : "",
@@ -179,27 +179,21 @@ var work = {
         work.jobs.forEach(function(works){
         formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
         formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
-        formatteWork.HTMLworkLocation = HTMLworkEmployer.replace(`%data%`, works.location);
-        formatteWork.formatteDates = HTMLworkEmployer.replace(`%data%`, works.dates);
-        formatteWork.formatteDescription = HTMLworkEmployer.replace(`%data%`, works.description);
-        if(work.length > 0)   {
-            // $(`#workExperience`).append(formatteWork.formatteEmployer);
-            // $(`#workExperience`).append(formatteWork.formatteTitle);
-            // $(`.work-entry`).append(formatteWork.HTMLworkLocation);
-            // $(`.work-entry`).append(formatteWork.formatteDates);
-            // $(`.work-entry`).append(formatteWork.formatteDescription);
+        formatteWork.HTMLworkLocation = HTMLworkLocation.replace(`%data%`, works.location);
+        formatteWork.formatteDates = HTMLworkDates.replace(`%data%`, works.dates);
+        formatteWork.formatteDescription = HTMLworkDescription.replace(`%data%`, works.description);
+        if(work.jobs.length > 0)   {
+            $(`.work-entry`).append(formatteWork.formatteEmployer);
+            $(`.work-entry`).append(formatteWork.formatteTitle);
+            $(`.work-entry`).append(formatteWork.HTMLworkLocation);
+            $(`.work-entry`).append(formatteWork.formatteDates);
+            $(`.work-entry`).append(formatteWork.formatteDescription);
         }
 
        });
     }
 }
+work.display();
 
-
-// var HTMLworkStart = '<div class="work-entry"></div>';
-// var HTMLworkEmployer = '<a href="#">%data%';
-// var HTMLworkTitle = ' - %data%</a>';
-// var HTMLworkDates = '<div class="date-text">%data%</div>';
-// var HTMLworkLocation = '<div class="location-text">%data%</div>';
-// var HTMLworkDescription = '<p><br>%data%</p>';
 
 

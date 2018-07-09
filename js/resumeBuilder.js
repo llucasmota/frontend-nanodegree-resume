@@ -140,60 +140,91 @@ var education = {
 education.display();
 
 var work = {
-    "jobs" : [
+    "jobs": [
         {
             "employer": "CTIS",
             "title": "Software Tester",
             "location": "Brasília",
             "dates": "2015 - 2017",
-            "description": "Codificação de testes automatizados utilizando javascript como linguagem, Protractor Framework como implementação das tecnologias jasmine, webdriver, além de todo escopo próprio do Protractor. Utilização da linguagem SQL para criação de massa de dados, consultas e demais operações necessárias. Criação de roteiros de teste, documentos de evidência, plano de teste e demais documentos necessários para a disciplina." 
- 
+            "description": "Codificação de testes automatizados utilizando javascript como linguagem, Protractor Framework como implementação das tecnologias jasmine, webdriver, além de todo escopo próprio do Protractor. Utilização da linguagem SQL para criação de massa de dados, consultas e demais operações necessárias. Criação de roteiros de teste, documentos de evidência, plano de teste e demais documentos necessários para a disciplina."
+
         },
         {
             "employer": "Mirante Tecnologia",
             "title": "Analista de Teste",
             "location": "Brasília",
             "dates": "2017 - 2018",
-            "description": "Realização de testes funcionais baseados nas aplicações financeiras do sicoob" 
- 
+            "description": "Realização de testes funcionais baseados nas aplicações financeiras do sicoob"
+
         },
         {
             "employer": "Sicoob",
             "title": "Técnico de TI",
             "location": "Brasília",
             "dates": "2018",
-            "description": "Realização de testes funcionais, testes REST baseados no apimanager e testes automatizados baseados nas aplicações financeiras do sicoob" 
- 
+            "description": "Realização de testes funcionais, testes REST baseados no apimanager e testes automatizados baseados nas aplicações financeiras do sicoob"
+
         },
     ],
-    "display" : function()  {
-       $(`#workExperience`).append(HTMLworkStart);
+    "display": function () {
+        $(`#workExperience`).append(HTMLworkStart);
         var formatteWork = {
-            formatteEmployer : "",
-            formatteTitle : "",
-            formatteLocation : "",
-            formatteDates : "",
-            formatteDescription : ""
+            formatteEmployer: "",
+            formatteTitle: "",
+            formatteLocation: "",
+            formatteDates: "",
+            formatteDescription: ""
         }
-    
-        work.jobs.forEach(function(works){
-        formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
-        formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
-        formatteWork.HTMLworkLocation = HTMLworkLocation.replace(`%data%`, works.location);
-        formatteWork.formatteDates = HTMLworkDates.replace(`%data%`, works.dates);
-        formatteWork.formatteDescription = HTMLworkDescription.replace(`%data%`, works.description);
-        if(work.jobs.length > 0)   {
-            $(`.work-entry`).append(formatteWork.formatteEmployer);
-            $(`.work-entry`).append(formatteWork.formatteTitle);
-            $(`.work-entry`).append(formatteWork.HTMLworkLocation);
-            $(`.work-entry`).append(formatteWork.formatteDates);
-            $(`.work-entry`).append(formatteWork.formatteDescription);
-        }
-
-       });
+        work.jobs.forEach(function (works) {
+            formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
+            formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
+            formatteWork.HTMLworkLocation = HTMLworkLocation.replace(`%data%`, works.location);
+            formatteWork.formatteDates = HTMLworkDates.replace(`%data%`, works.dates);
+            formatteWork.formatteDescription = HTMLworkDescription.replace(`%data%`, works.description);
+            if (work.jobs.length > 0) {
+                $(`.work-entry`).append(formatteWork.formatteEmployer);
+                $(`.work-entry`).append(formatteWork.formatteTitle);
+                $(`.work-entry`).append(formatteWork.HTMLworkLocation);
+                $(`.work-entry`).append(formatteWork.formatteDates);
+                $(`.work-entry`).append(formatteWork.formatteDescription);
+            }
+        });
     }
 }
 work.display();
 
+var projects = {
+    "projects": [
+        {
+            "title": "Protifólio Project",
+            "dates": "2017",
+            "description": "Projeto especificado pela Udacity onde foi apresentado mockup que deveria ter seus recursos de imagem e texto apresentados em 3 dispositivos diferentes com responsividade",
+            "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+        },
+    ],
+    "display": function () {
+        $(`#projects`).append(HTMLprojectStart);
+        var formatte = {
+            formatteTitle: "",
+            formatteDates: "",
+            formatteDescription: "",
+            formatteImages: ""
+        }
+        projects.projects.forEach(function (project) {
+            formatte.formatteTitle = HTMLprojectTitle.replace(`%data%`, project.title);
+            formatte.formatteDates = HTMLprojectDates.replace(`%data%`, project.dates);
+            formatte.formatteDescription = HTMLprojectDescription.replace(`%data%`, project.description);
+            formatte.formatteImages = HTMLprojectImage.replace(`%data%`, project.images);
+            project.images.forEach(function (img) {
+                formatte.formatteImages = HTMLprojectImage.replace(`%data%`, img);
+                $(".project-entry").append(formatte.formatteImages);
+            });
+            $(".project-entry").append(formatte.formatteTitle);
+            $(".project-entry").append(formatte.formatteDates);
+            $(".project-entry").append(formatte.formatteDescription);
 
+        })
+    }
+}
+projects.display();
 

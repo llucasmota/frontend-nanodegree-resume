@@ -1,9 +1,4 @@
 
-//funcao que prepara variavem para ser inserido na página
-function preparacao(variavel, formatador, atributo) {
-    formatador = variavel.replace("%data%", atributo);
-}
-
 var bio = {
     "name": "Lucas Mota",
     "role": "Front End Developer",
@@ -38,7 +33,7 @@ var bio = {
             formattePicture: HTMLbioPic.replace("%data%", bio.biopic),
             formatteWelcome: HTMLwelcomeMsg.replace(`%data%`, bio.welcomeMessage),
             formatteSkills: ""
-        }
+        };
 
 
         $("#header").append(formatte.formattePicture);
@@ -54,11 +49,11 @@ var bio = {
             bio.skills.forEach(function (indexSkill) {
                 formatte.formatteSkills = HTMLskills.replace(`%data%`, indexSkill);
                 $(`#skills`).append(formatte.formatteSkills);
-            })
+            });
         }
 
     }
-}
+};
 
 bio.display();
 
@@ -104,7 +99,7 @@ var education = {
             formatteDates: "",
             formatteLocation: "",
             formatteMajor: ""
-        }
+        };
         education.schools.forEach(function (school) {
             formatteSchool.formatteName = HTMLschoolName.replace(`%data%`, school.name);
             formatteSchool.formatteDegree = HTMLschoolDegree.replace(`%data%`, school.degree);
@@ -124,7 +119,7 @@ var education = {
             formatteSchool: "",
             formatteDates: "",
             formatteUrl: ""
-        }
+        };
         education.onlineCourses.forEach(function (onCourses) {
             formatteOnline.formatteTitle = HTMLonlineTitle.replace(`%data%`, onCourses.title);
             formatteOnline.formatteSchool = HTMLonlineSchool.replace(`%data%`, onCourses.school);
@@ -136,7 +131,7 @@ var education = {
         });
 
     }
-}
+};
 
 education.display();
 
@@ -175,7 +170,7 @@ var work = {
             formatteLocation: "",
             formatteDates: "",
             formatteDescription: ""
-        }
+        };
         work.jobs.forEach(function (works) {
             formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
             formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
@@ -191,7 +186,7 @@ var work = {
             }
         });
     }
-}
+};
 work.display();
 
 var projects = {
@@ -210,7 +205,7 @@ var projects = {
             formatteDates: "",
             formatteDescription: "",
             formatteImages: ""
-        }
+        };
         projects.projects.forEach(function (project) {
             formatte.formatteTitle = HTMLprojectTitle.replace(`%data%`, project.title);
             formatte.formatteDates = HTMLprojectDates.replace(`%data%`, project.dates);
@@ -224,20 +219,21 @@ var projects = {
             $(".project-entry").append(formatte.formatteDates);
             $(".project-entry").append(formatte.formatteDescription);
 
-        })
+        });
     }
-}
+};
 projects.display();
 
-// $(`#mapDiv`).append(googleMap);
-// function initMap() {
-//     // The location of Uluru
-//     var uluru = {lat: -25.344, lng: 131.036};
-//     // The map, centered at Uluru
-//     var map = new google.maps.Map(
-//         document.getElementById('map'), {zoom: 4, center: uluru});
-//     // The marker, positioned at Uluru
-//     var marker = new google.maps.Marker({position: uluru, map: map});
-//   }
+$(`#mapDiv`).append(googleMap);
+function initMap() {
+    // The location of Uluru -15.795397, -47.913984
 
-//   initMap();
+    var sicoob = {lat: -15.795397, lng: -47.913984};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: sicoob});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: sicoob, map: map});
+  }
+
+  initMap();

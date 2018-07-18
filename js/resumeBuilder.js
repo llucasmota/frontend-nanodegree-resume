@@ -31,7 +31,7 @@ var bio = {
             formatteGithub: HTMLgithub.replace("%data%", bio.contacts.twitter),
             formatteBioLocation: HTMLlocation.replace("%data%", bio.contacts.location),
             formattePicture: HTMLbioPic.replace("%data%", bio.biopic),
-            formatteWelcome: HTMLwelcomeMsg.replace(`%data%`, bio.welcomeMessage),
+            formatteWelcome: HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage),
             formatteSkills: ""
         };
 
@@ -43,12 +43,12 @@ var bio = {
         $("#topContacts").append(formatte.formatteTwitter);
         $("#topContacts").append(formatte.formatteGithub);
         $("#topContacts").append(formatte.formatteBioLocation);
-        $(`#header`).append(formatte.formatteWelcome);
+        $("#header").append(formatte.formatteWelcome);
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
             bio.skills.forEach(function (indexSkill) {
-                formatte.formatteSkills = HTMLskills.replace(`%data%`, indexSkill);
-                $(`#skills`).append(formatte.formatteSkills);
+                formatte.formatteSkills = HTMLskills.replace("%data%", indexSkill);
+                $("#skills").append(formatte.formatteSkills);
             });
         }
 
@@ -91,7 +91,7 @@ var education = {
         }
     ],
     "display": function () {
-        $(`#education`).append(HTMLschoolStart);
+        $("#education").append(HTMLschoolStart);
 
         var formatteSchool = {
             formatteName: "",
@@ -101,19 +101,19 @@ var education = {
             formatteMajor: ""
         };
         education.schools.forEach(function (school) {
-            formatteSchool.formatteName = HTMLschoolName.replace(`%data%`, school.name);
-            formatteSchool.formatteDegree = HTMLschoolDegree.replace(`%data%`, school.degree);
-            formatteSchool.formatteDates = HTMLschoolDates.replace(`%data%`, school.degree);
-            formatteSchool.formatteDates = HTMLschoolDates.replace(`%data%`, school.dates);
-            formatteSchool.formatteLocation = HTMLschoolLocation.replace(`%data%`, school.location);
-            formatteSchool.formatteMajor = HTMLschoolMajor.replace(`%data%`, school.majors);
-            $(`.education-entry`).append(formatteSchool.formatteName + formatteSchool.formatteDegree);
-            $(`.education-entry`).append(formatteSchool.formatteDates);
-            $(`.education-entry`).append(formatteSchool.formatteMajor);
-            $(`.education-entry`).append(formatteSchool.formatteLocation);
+            formatteSchool.formatteName = HTMLschoolName.replace("%data%", school.name);
+            formatteSchool.formatteDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            formatteSchool.formatteDates = HTMLschoolDates.replace("%data%", school.degree);
+            formatteSchool.formatteDates = HTMLschoolDates.replace("%data%", school.dates);
+            formatteSchool.formatteLocation = HTMLschoolLocation.replace("%data%", school.location);
+            formatteSchool.formatteMajor = HTMLschoolMajor.replace("%data%", school.majors);
+            $(".education-entry").append(formatteSchool.formatteName + formatteSchool.formatteDegree);
+            $(".education-entry").append(formatteSchool.formatteDates);
+            $(".education-entry").append(formatteSchool.formatteMajor);
+            $(".education-entry").append(formatteSchool.formatteLocation);
 
         });
-        $(`#education`).append(HTMLonlineClasses);
+        $("#education").append(HTMLonlineClasses);
         var formatteOnline = {
             formatteTitle: "",
             formatteSchool: "",
@@ -121,13 +121,13 @@ var education = {
             formatteUrl: ""
         };
         education.onlineCourses.forEach(function (onCourses) {
-            formatteOnline.formatteTitle = HTMLonlineTitle.replace(`%data%`, onCourses.title);
-            formatteOnline.formatteSchool = HTMLonlineSchool.replace(`%data%`, onCourses.school);
-            formatteOnline.formatteDates = HTMLonlineDates.replace(`%data%`, onCourses.dates);
-            formatteOnline.formatteUrl = HTMLonlineURL.replace(`%data%`, onCourses.url);
-            $(`#education`).append(formatteOnline.formatteTitle + formatteOnline.formatteSchool);
-            $(`#education`).append(formatteOnline.formatteDates);
-            $(`#education`).append(formatteOnline.formatteUrl);
+            formatteOnline.formatteTitle = HTMLonlineTitle.replace("%data%", onCourses.title);
+            formatteOnline.formatteSchool = HTMLonlineSchool.replace("%data%", onCourses.school);
+            formatteOnline.formatteDates = HTMLonlineDates.replace("%data%", onCourses.dates);
+            formatteOnline.formatteUrl = HTMLonlineURL.replace("%data%", onCourses.url);
+            $("#education").append(formatteOnline.formatteTitle + formatteOnline.formatteSchool);
+            $("#education").append(formatteOnline.formatteDates);
+            $("#education").append(formatteOnline.formatteUrl);
         });
 
     }
@@ -163,7 +163,7 @@ var work = {
         },
     ],
     "display": function () {
-        $(`#workExperience`).append(HTMLworkStart);
+        $("#workExperience").append(HTMLworkStart);
         var formatteWork = {
             formatteEmployer: "",
             formatteTitle: "",
@@ -172,17 +172,17 @@ var work = {
             formatteDescription: ""
         };
         work.jobs.forEach(function (works) {
-            formatteWork.formatteEmployer = HTMLworkEmployer.replace(`%data%`, works.employer);
-            formatteWork.formatteTitle = HTMLworkTitle.replace(`%data%`, works.title);
-            formatteWork.HTMLworkLocation = HTMLworkLocation.replace(`%data%`, works.location);
-            formatteWork.formatteDates = HTMLworkDates.replace(`%data%`, works.dates);
-            formatteWork.formatteDescription = HTMLworkDescription.replace(`%data%`, works.description);
+            formatteWork.formatteEmployer = HTMLworkEmployer.replace("%data%", works.employer);
+            formatteWork.formatteTitle = HTMLworkTitle.replace("%data%", works.title);
+            formatteWork.HTMLworkLocation = HTMLworkLocation.replace("%data%", works.location);
+            formatteWork.formatteDates = HTMLworkDates.replace("%data%", works.dates);
+            formatteWork.formatteDescription = HTMLworkDescription.replace("%data%", works.description);
             if (work.jobs.length > 0) {
-                $(`.work-entry`).append(formatteWork.formatteEmployer);
-                $(`.work-entry`).append(formatteWork.formatteTitle);
-                $(`.work-entry`).append(formatteWork.HTMLworkLocation);
-                $(`.work-entry`).append(formatteWork.formatteDates);
-                $(`.work-entry`).append(formatteWork.formatteDescription);
+                $(".work-entry").append(formatteWork.formatteEmployer);
+                $(".work-entry").append(formatteWork.formatteTitle);
+                $(".work-entry").append(formatteWork.HTMLworkLocation);
+                $(".work-entry").append(formatteWork.formatteDates);
+                $(".work-entry").append(formatteWork.formatteDescription);
             }
         });
     }
@@ -199,7 +199,7 @@ var projects = {
         },
     ],
     "display": function () {
-        $(`#projects`).append(HTMLprojectStart);
+        $("#projects").append(HTMLprojectStart);
         var formatte = {
             formatteTitle: "",
             formatteDates: "",
@@ -207,12 +207,12 @@ var projects = {
             formatteImages: ""
         };
         projects.projects.forEach(function (project) {
-            formatte.formatteTitle = HTMLprojectTitle.replace(`%data%`, project.title);
-            formatte.formatteDates = HTMLprojectDates.replace(`%data%`, project.dates);
-            formatte.formatteDescription = HTMLprojectDescription.replace(`%data%`, project.description);
-            formatte.formatteImages = HTMLprojectImage.replace(`%data%`, project.images);
+            formatte.formatteTitle = HTMLprojectTitle.replace("%data%", project.title);
+            formatte.formatteDates = HTMLprojectDates.replace("%data%", project.dates);
+            formatte.formatteDescription = HTMLprojectDescription.replace("%data%", project.description);
+            formatte.formatteImages = HTMLprojectImage.replace("%data%", project.images);
             project.images.forEach(function (img) {
-                formatte.formatteImages = HTMLprojectImage.replace(`%data%`, img);
+                formatte.formatteImages = HTMLprojectImage.replace("%data%", img);
                 $(".project-entry").append(formatte.formatteImages);
             });
             $(".project-entry").append(formatte.formatteTitle);
@@ -224,7 +224,7 @@ var projects = {
 };
 projects.display();
 
-$(`#mapDiv`).append(googleMap);
+$("#mapDiv").append(googleMap);
 function initMap() {
     // The location of Uluru -15.795397, -47.913984
 

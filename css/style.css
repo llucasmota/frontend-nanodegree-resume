@@ -6,7 +6,7 @@ body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
 .clear-fix {
   overflow: auto;
 }
-.education-entry, .work-entry, .project-entry {
+.education-entry, .work-entry, .project-entry, .onclass{
   padding: 0 5%;
 }
 h1 {

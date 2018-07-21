@@ -142,7 +142,11 @@ var work = {
             "title": "Software Tester",
             "location": "Brasília",
             "dates": "2015 - 2017",
-            "description": "Codificação de testes automatizados utilizando javascript como linguagem, Protractor Framework como implementação das tecnologias jasmine, webdriver, além de todo escopo próprio do Protractor. Utilização da linguagem SQL para criação de massa de dados, consultas e demais operações necessárias. Criação de roteiros de teste, documentos de evidência, plano de teste e demais documentos necessários para a disciplina."
+            "description": "Codificação de testes automatizados utilizando javascript como linguagem," +
+                "Protractor Framework como implementação das tecnologias jasmine, webdriver, além de todo" +
+                "escopo próprio do Protractor. Utilização da linguagem SQL para criação de massa de dados," +
+                "consultas e demais operações necessárias. Criação de roteiros de teste, documentos de" +
+                "evidência, plano de teste e demais documentos necessários para a disciplina."
 
         },
         {
@@ -158,7 +162,8 @@ var work = {
             "title": "Técnico de TI",
             "location": "Brasília",
             "dates": "2018",
-            "description": "Realização de testes funcionais, testes REST baseados no apimanager e testes automatizados baseados nas aplicações financeiras do sicoob"
+            "description": "Realização de testes funcionais, testes REST baseados no apimanager e testes" +
+                "automatizados baseados nas aplicações financeiras do sicoob"
 
         },
     ],
@@ -194,7 +199,8 @@ var projects = {
         {
             "title": "Protifólio Project",
             "dates": "2017",
-            "description": "Projeto especificado pela Udacity onde foi apresentado mockup que deveria ter seus recursos de imagem e texto apresentados em 3 dispositivos diferentes com responsividade",
+            "description": "Projeto especificado pela Udacity onde foi apresentado mockup que" +
+                "deveria ter seus recursos de imagem e texto apresentados em 3 dispositivos diferentes com responsividade",
             "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
         },
     ],
@@ -228,12 +234,12 @@ $("#mapDiv").append(googleMap);
 function initMap() {
     // The location of Uluru -15.795397, -47.913984
 
-    var sicoob = {lat: -15.795397, lng: -47.913984};
+    var sicoob = { lat: -15.795397, lng: -47.913984 };
     // The map, centered at Uluru
     var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: sicoob});
+        document.getElementById('map'), { zoom: 4, center: sicoob });
     // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: sicoob, map: map});
-  }
+    var marker = new google.maps.Marker({ position: sicoob, map: map });
+}
 
-  initMap();
+initMap();

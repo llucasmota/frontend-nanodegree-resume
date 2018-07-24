@@ -57,7 +57,7 @@ p {
   line-height: 21px;
 }
 a {
-  color: #1199c3;
+  color: #00A199;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -78,10 +78,10 @@ a {
 #mapDiv {
   background-color: #F1ECCE;
 }
-.orange {
+.blue {
   background-color: #9FC2CC;
 }
-.orange-text {
+.blue-text {
   color: #9FC2CC;
 }
 .white-text {

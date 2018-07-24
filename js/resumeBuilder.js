@@ -1,4 +1,5 @@
 var data = "%data%";
+var textUrl = "url: ";
 
 var bio = {
     "name": "Lucas Mota",
